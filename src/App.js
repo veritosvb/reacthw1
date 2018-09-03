@@ -6,7 +6,7 @@ import { Col, Row, Container } from "./components/Grid";
 import friends from "./friends.json";
 
 class Detail extends Component {
-  state = {
+state = {
     score: 0,
     topScore: 0,
     guessed:"",
@@ -33,13 +33,15 @@ class Detail extends Component {
     if(this.state.friends.filter(friend => friend.id === id)[0].guessed === 0){
       this.state.friends.filter(friend => friend.id === id)[0].guessed = 1;
       this.setState({  message: "You guessed correctly!" });
+      this.setState({  guessed: 0 });
       this.handleIncrement();
     } else{
       this.setState({  message: "You guessed incorrectly!" });
+            this.setState({  guessed: 1 });
             this.handleDecrement();
+            
     }
     let friends = this.state.friends.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
-    
     this.setState({ friends });
 
   }
@@ -60,7 +62,7 @@ class Detail extends Component {
             clickedFriend={this.clickedFriend}
             id={friend.id}
             image={friend.image}
-            format={friend.clicked}
+            guessed={this.state.guessed}
           />
           </Col>
         ))}
