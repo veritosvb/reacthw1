@@ -1,0 +1,99 @@
+navbar .correct{
+    -webkit-animation:.4s correct;
+    animation:.4s correct
+}
+.navbar .incorrect{
+    -webkit-animation:.4s incorrect;
+    animation:.4s incorrect
+}
+@-webkit-keyframes correct{
+    0%{
+        color:#fff
+    }
+    50%{
+        color:#2e7d32
+    }
+    to{
+        color:#fff
+    }
+}
+@keyframes correct{
+    0%{
+        color:#fff
+    }
+    50%{
+        color:#2e7d32
+    }
+    to{
+        color:#fff
+    }
+}
+@-webkit-keyframes incorrect{
+    0%{
+        color:#fff
+    }
+    50%{
+        color:#c62828
+    }
+    to{
+        color:#fff
+    }
+}
+@keyframes incorrect{
+    0%{
+        color:#fff
+    }
+    50%{
+        color:#c62828
+    }
+    to{
+        color:#fff
+    }
+}
+.navbar{
+    background:#5133a4;
+    min-height:70px;
+    position:fixed;
+    width:100%;
+    -webkit-box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+    box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+    color:#fff;
+    font-size:20px;
+    z-index:99;
+    white-space:nowrap
+}
+.navbar ul{
+    margin:0;
+    padding:20
+}
+.navbar li{
+    display:inline-block;
+    padding:2px 10px;
+    width:50%;
+    text-align:center
+}
+.navbar a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:900
+}
+@media (max-width:420px){
+    .navbar li:first-child{
+        width:15%
+    }
+    .navbar li:nth-child(2){
+        width:35%
+    }
+    .navbar li:last-child{
+        width:40%
+    }
+}
+
+@media (max-width:1000px){
+    .navbar li{
+        display:inline-block;
+        padding:2px 10px;
+        width:30%;
+        text-align:center
+    }
+}
